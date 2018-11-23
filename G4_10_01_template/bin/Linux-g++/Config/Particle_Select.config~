@@ -1,0 +1,18 @@
+! this file is used to specify the particle that you want to use
+! in this program you can specify two kinds of particle: common particle, like gamma, Lepton, which already
+! defined in Geant4, you can use them directly by name; Heavy Ion, which is also already defined in Geant4,
+! but you should use another method to specify them.
+
+Particle_Tyle		CommonParticle
+
+{ CommonParticle
+  ParticleNum		2
+  Particle		0.4	gamma		EnergyType(0)
+  Particle		0.6	e-		EnergyType(4)
+}
+
+{ HeavyIon
+  ParticleNum		2
+  Particle		0.1	Z(1)	A(1)	EnergyType(2.1)
+  Particle		0.9	Z(1)	A(2)	EnergyType(2.5)
+}
