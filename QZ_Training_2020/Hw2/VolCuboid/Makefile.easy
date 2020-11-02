@@ -1,0 +1,6 @@
+default: hello
+
+hello:
+	g++ -o bin/hello -Iinclude/ src/*.cc
+clean:
+	rm -f obj/*.o bin/*

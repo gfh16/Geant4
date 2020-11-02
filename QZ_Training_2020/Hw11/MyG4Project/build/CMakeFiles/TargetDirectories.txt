@@ -1,0 +1,8 @@
+/mnt/fair/数据分析课程/Class_2020/Hw11/MyG4Project/build/CMakeFiles/rebuild_cache.dir
+/mnt/fair/数据分析课程/Class_2020/Hw11/MyG4Project/build/CMakeFiles/edit_cache.dir
+/mnt/fair/数据分析课程/Class_2020/Hw11/MyG4Project/build/CMakeFiles/install.dir
+/mnt/fair/数据分析课程/Class_2020/Hw11/MyG4Project/build/CMakeFiles/list_install_components.dir
+/mnt/fair/数据分析课程/Class_2020/Hw11/MyG4Project/build/CMakeFiles/MySim.dir
+/mnt/fair/数据分析课程/Class_2020/Hw11/MyG4Project/build/CMakeFiles/My.dir
+/mnt/fair/数据分析课程/Class_2020/Hw11/MyG4Project/build/CMakeFiles/install/local.dir
+/mnt/fair/数据分析课程/Class_2020/Hw11/MyG4Project/build/CMakeFiles/install/strip.dir

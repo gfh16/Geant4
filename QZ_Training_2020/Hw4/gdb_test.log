@@ -1,0 +1,102 @@
+q@q-ThinkPad-T570:/mnt/fair/数据分析课程/Class_2020/Hw4$ g++ gdb_test.cc -g -Wall -o gdb_test
+q@q-ThinkPad-T570:/mnt/fair/数据分析课程/Class_2020/Hw4$ gdb gdb_test
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from gdb_test...done.
+(gdb) list 1,20
+1	// virtual members
+2	#include <iostream>
+3	using namespace std;
+4
+5	class Polygon {
+6	  protected:
+7	    int width, height;
+8	  public:
+9	    void set_values (int a, int b){ width=a; height=b; }
+10	    virtual int area (){ return 0; }
+11	};
+12
+13	class Rectangle: public Polygon {
+14	  public:
+15	    int area (){ return width * height; }
+16	};
+17
+18	class Triangle: public Polygon {
+19	  public:
+20	    int area () { return (width * height / 2); }
+(gdb) list 20,30
+20	    int area () { return (width * height / 2); }
+21	};
+22
+23	int main () {
+24	  Rectangle rect;
+25	  Triangle trgl;
+26	  Polygon poly;
+27	  Polygon * ppoly1 = &rect;
+28	  Polygon * ppoly2 = &trgl;
+29	  Polygon * ppoly3 = &poly;
+30	  ppoly1->set_values (4,5);
+(gdb) break 30
+Breakpoint 1 at 0x400959: file gdb_test.cc, line 30.
+(gdb) run
+Starting program: /mnt/fair/数据分析课程/Class_2020/Hw4/gdb_test
+
+Breakpoint 1, main () at gdb_test.cc:30
+30	  ppoly1->set_values (4,5);
+(gdb) next
+31	  ppoly2->set_values (4,5);
+(gdb) next 2
+33	  cout << ppoly1->area() << '\n';
+(gdb) step
+Rectangle::area (this=0x7fffffffddf0) at gdb_test.cc:15
+15	    int area (){ return width * height; }
+(gdb) step
+20
+main () at gdb_test.cc:34
+34	  cout << ppoly2->area() << '\n';
+(gdb) step
+Triangle::area (this=0x7fffffffde00) at gdb_test.cc:20
+20	    int area () { return (width * height / 2); }
+(gdb) print ppoly1
+No symbol "ppoly1" in current context.
+(gdb) step
+10
+main () at gdb_test.cc:35
+35	  cout << ppoly3->area() << '\n';
+(gdb) print ppoly1
+$1 = (Polygon *) 0x7fffffffddf0
+(gdb) print ppoly2
+$2 = (Polygon *) 0x7fffffffde00
+(gdb) print ppoly3
+$3 = (Polygon *) 0x7fffffffde10
+(gdb) step
+Polygon::area (this=0x7fffffffde10) at gdb_test.cc:10
+10	    virtual int area (){ return 0; }
+(gdb) step
+0
+main () at gdb_test.cc:36
+36	  return 0;
+(gdb) step
+37	}
+(gdb) step
+__libc_start_main (main=0x400906 <main()>, argc=1, argv=0x7fffffffdf18,
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>,
+    stack_end=0x7fffffffdf08) at ../csu/libc-start.c:325
+325	../csu/libc-start.c: 没有那个文件或目录.
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) n
+Program not restarted.
+(gdb)

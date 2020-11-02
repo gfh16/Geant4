@@ -1,0 +1,8 @@
+/mnt/fair/数据分析课程/Class_2020/Hw9/B1_build/CMakeFiles/install.dir
+/mnt/fair/数据分析课程/Class_2020/Hw9/B1_build/CMakeFiles/list_install_components.dir
+/mnt/fair/数据分析课程/Class_2020/Hw9/B1_build/CMakeFiles/rebuild_cache.dir
+/mnt/fair/数据分析课程/Class_2020/Hw9/B1_build/CMakeFiles/edit_cache.dir
+/mnt/fair/数据分析课程/Class_2020/Hw9/B1_build/CMakeFiles/exampleB1.dir
+/mnt/fair/数据分析课程/Class_2020/Hw9/B1_build/CMakeFiles/B1.dir
+/mnt/fair/数据分析课程/Class_2020/Hw9/B1_build/CMakeFiles/install/strip.dir
+/mnt/fair/数据分析课程/Class_2020/Hw9/B1_build/CMakeFiles/install/local.dir
